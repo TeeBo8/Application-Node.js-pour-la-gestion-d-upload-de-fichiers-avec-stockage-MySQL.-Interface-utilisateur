@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Données Soumises</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="success-message">
+            <h1>Inscription réussie !</h1>
+            
+            <div class="user-info">
+                <div class="profile-image">
+                    <img src="<%= imagePath %>" alt="Photo de profil">
+                </div>
+                
+                <div class="details">
+                    <p><strong>Nom :</strong> <%= nom %></p>
+                    <p><strong>Email :</strong> <%= email %></p>
+                </div>
+            </div>
+
+            <a href="/" class="btn">Retour au formulaire</a>
+        </div>
+    </div>
+</body>
+</html>

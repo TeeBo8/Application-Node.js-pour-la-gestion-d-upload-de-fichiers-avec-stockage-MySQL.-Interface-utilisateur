@@ -1,0 +1,105 @@
+<div class="container confirmation-page">
+    <div class="confirmation-content">
+        <h1>Upload Réussi !</h1>
+        
+        <div class="details">
+            <h2>Détails de l'Upload</h2>
+            
+            <div class="detail-item">
+                <strong>Nom :</strong>
+                <span><%= locals.name || 'Non spécifié' %></span>
+            </div>
+            
+            <div class="detail-item">
+                <strong>Email :</strong>
+                <span><%= locals.email || 'Non spécifié' %></span>
+            </div>
+            
+            <% if (locals.imagePath) { %>
+                <div class="detail-item image-preview">
+                    <strong>Image Uploadée :</strong>
+                    <img src="<%= imagePath.replace('public', '') %>" alt="Image uploadée">
+                </div>
+            <% } %>
+        </div>
+
+        <div class="actions">
+            <a href="/" class="btn-back">Nouvel Upload</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .confirmation-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh;
+    }
+
+    .confirmation-content {
+        background-color: var(--background-violet);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(102, 16, 242, 0.1);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .confirmation-content h1 {
+        color: var(--primary-color);
+        margin-bottom: 30px;
+    }
+
+    .details {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .detail-item {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--purple-light);
+        padding-bottom: 10px;
+    }
+
+    .detail-item:last-child {
+        border-bottom: none;
+    }
+
+    .detail-item strong {
+        color: var(--secondary-color);
+    }
+
+    .image-preview img {
+        max-width: 300px;
+        max-height: 300px;
+        border-radius: 10px;
+        margin-top: 10px;
+        object-fit: cover;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-back {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .btn-back:hover {
+        transform: translateY(-3px);
+    }
+</style>
